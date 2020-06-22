@@ -125,6 +125,8 @@ function doBrowserify(suffix, plugins) {
   return gulp.src(require("path").resolve(pkg.main)).
          pipe(webpack({
            output: {
+             library: "nodejose",
+             libraryTarget: "umd",
              filename: pkg.name + suffix
            },
            plugins: plugins,
